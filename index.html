@@ -102,7 +102,9 @@ footer{background:var(--navy);color:#b9c6dc;padding:32px 0;font-size:.85rem}
 footer .brand{color:#fff;margin-bottom:10px}
 
 /* WhatsApp flottant */
-.wa-float{position:fixed;z-index:60;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:999px;background:var(--wa);color:#073b1c;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+nav a{white-space:nowrap}
+footer{padding-bottom:96px}
+.wa-float{position:fixed;z-index:60;left:auto;right:14px;padding:0 20px;bottom:calc(14px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:999px;background:var(--wa);color:#073b1c;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .wa-float svg{width:26px;height:26px}
 
 .mot{display:grid;gap:22px;align-items:center}
@@ -166,7 +168,10 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;bac
   .grid.c2,.two{grid-template-columns:repeat(2,1fr)}
   .grid.c3{grid-template-columns:repeat(3,1fr)}
   .grid.c4{grid-template-columns:repeat(4,1fr)}
-  .wa-float{left:auto;right:24px;bottom:24px;padding:0 22px}
+  .wa-float{right:24px;bottom:24px;padding:0 22px}
+  footer{padding-bottom:32px}
+  nav ul{gap:0}
+  nav a{font-size:.85rem;padding:8px 8px}
   section{padding:80px 0}
 }
 </style>
@@ -295,8 +300,6 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;bac
       <div class="card"><h3>Commissions et contrôle</h3><p>Commissions thématiques et contrôle des comptes.</p></div>
     </div>
 
-    <h3 style="margin:32px 0 12px">Nos valeurs</h3>
-    <div><span class="pill">Intégrité</span><span class="pill">Transparence</span><span class="pill">Neutralité</span><span class="pill">Respect mutuel</span><span class="pill">Confidentialité</span></div>
   </div>
 </section>
 
