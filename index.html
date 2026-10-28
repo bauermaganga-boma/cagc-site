@@ -127,6 +127,44 @@ footer{padding-bottom:96px}
 .sign{color:var(--navy)}
 .sign b{font-family:Georgia,serif;font-size:1.15rem}
 @media(min-width:760px){.mot{grid-template-columns:340px 1fr;gap:44px}}
+/* graphiques */
+.donut-box{display:grid;gap:18px;align-items:center;background:#fff;border:1px solid var(--g100);border-radius:var(--r);padding:20px;margin-top:26px}
+.donut{position:relative;width:min(230px,70%);margin:0 auto}
+.donut svg{width:100%;height:auto;transform:rotate(-90deg)}
+.donut circle{fill:none;stroke-width:15;transition:stroke-width .2s,opacity .2s;cursor:pointer}
+.donut circle.dim{opacity:.35}
+.donut circle.on{stroke-width:19}
+.dc{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}
+.dc b{font-family:Georgia,serif;font-size:2.2rem;color:var(--navy);line-height:1}
+.dc span{font-size:.78rem;color:var(--g500);max-width:11ch}
+.legend{list-style:none}
+.legend li{display:flex;align-items:center;gap:12px;padding:10px 6px;border-bottom:1px solid var(--g100);font-size:.95rem;cursor:pointer;border-radius:8px}
+.legend li.on{background:var(--g50)}
+.legend i{flex:none;width:12px;height:12px;border-radius:50%}
+.org{display:flex;flex-direction:column;align-items:center;gap:0}
+.org .node{width:100%;max-width:420px;text-align:center;background:#fff;border:1px solid var(--g300);border-radius:12px;padding:12px 14px;font-weight:700;color:var(--navy)}
+.org .node small{display:block;font-weight:400;color:var(--g500);font-size:.78rem}
+.org .node.top{background:var(--navy);color:#fff;border-color:var(--navy)}
+.org .node.top small{color:#b9c6dc}
+.org .node.gold{border-color:var(--gold);box-shadow:0 0 0 2px rgba(201,162,74,.25)}
+.org .link{width:2px;height:18px;background:var(--gold)}
+.org .split{display:grid;gap:10px;width:100%;max-width:420px}
+.flow{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:30px}
+.fn{width:100%;max-width:320px;text-align:center;background:#fff;border-radius:var(--r);padding:16px;box-shadow:0 1px 3px rgba(15,36,71,.08)}
+.fn b{display:block;font-family:Georgia,serif;font-size:1.3rem;color:var(--navy)}
+.fn small{color:var(--g500);font-size:.82rem}
+.fn.core{background:var(--navy);box-shadow:0 12px 28px rgba(15,36,71,.25)}
+.fn.core b{color:var(--gold)}
+.fn.core small{color:#cdd7e8}
+.fa span{display:inline-block;color:var(--gold);font-size:1.6rem;transform:rotate(90deg)}
+@media(min-width:760px){
+  .donut-box{grid-template-columns:260px 1fr;gap:36px;padding:28px}
+  .org .split{grid-template-columns:1fr 1fr;max-width:520px}
+  .org .node{max-width:520px}
+  .flow{flex-direction:row;justify-content:center;gap:14px}
+  .fa span{transform:none}
+  .fn{max-width:260px}
+}
 /* ===== Design renforcé ===== */
 h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.01em}
 h2{position:relative;padding-bottom:14px}
@@ -254,6 +292,13 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;bac
       <div class="card"><h3>Coopération institutionnelle</h3><p>Relais avec ambassades, chambres de commerce et agences de promotion des investissements.</p></div>
       <div class="card"><h3>Développement économique et social</h3><p>Des partenariats qui créent des emplois, des compétences et de la valeur partagée.</p></div>
     </div>
+    <div class="flow" aria-label="Schéma de la relation bilatérale">
+      <div class="fn"><b>Gabon</b><small>entreprises · institutions</small></div>
+      <div class="fa"><span>⇄</span></div>
+      <div class="fn core"><b>CAGC</b><small>réseau · conseil · plaidoyer</small></div>
+      <div class="fa"><span>⇄</span></div>
+      <div class="fn"><b>Canada</b><small>entreprises · institutions</small></div>
+    </div>
     <p class="note"><span class="todo">Pistes proposées, à ajuster selon l'offre de service définitive.</span></p>
   </div>
 </section>
@@ -293,7 +338,19 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;bac
     </div>
 
     <h3 style="margin:32px 0 12px">Gouvernance</h3>
-    <div class="grid c2">
+    <div class="org" aria-label="Organigramme de gouvernance">
+      <div class="node top">Assemblée générale<small>annuelle</small></div>
+      <div class="link"></div>
+      <div class="node">Conseil d'administration<small>membres fondateurs et partenaires</small></div>
+      <div class="link"></div>
+      <div class="node gold">Bureau<small>Président · Vice-président · Secrétaire général · Trésorier</small></div>
+      <div class="link"></div>
+      <div class="split">
+        <div class="node">Commissions thématiques<small>par secteur</small></div>
+        <div class="node">Contrôle des comptes</div>
+      </div>
+    </div>
+    <div class="grid c2" style="margin-top:20px">
       <div class="card"><h3>Assemblée générale</h3><p>Réunie chaque année.</p></div>
       <div class="card"><h3>Conseil d'administration</h3><p>Membres fondateurs et, le cas échéant, entreprises partenaires.</p></div>
       <div class="card"><h3>Bureau</h3><p>Président, vice-président, secrétaire général, trésorier.</p></div>
@@ -316,6 +373,10 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;bac
       <div class="card"><div class="num">2</div><h3>Événements</h3><p>Organiser des rencontres de réseautage, des forums économiques et des missions d'affaires.</p></div>
       <div class="card"><div class="num">3</div><h3>Plaidoyer</h3><p>Formuler des recommandations aux autorités pour améliorer le climat des affaires.</p></div>
       <div class="card"><div class="num">4</div><h3>Échanges et investissements</h3><p>Favoriser le commerce, les investissements et la coopération entre acteurs gabonais et canadiens.</p></div>
+    </div>
+    <div class="donut-box" data-donut="missions" data-center="4|missions">
+      <div class="donut"></div>
+      <ul class="legend"></ul>
     </div>
     <h3 style="margin:32px 0 8px">Nos activités</h3>
     <ul class="tick">
@@ -352,6 +413,10 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;bac
     <h2>Rejoindre le CAGC</h2>
     <p class="lead">Adhésion sur dossier. Cotisation annuelle selon la catégorie.</p>
     <h3 style="margin-bottom:10px">Catégories de membres</h3>
+    <div class="donut-box" data-donut="membres" data-center="6|catégories" style="margin-bottom:22px">
+      <div class="donut"></div>
+      <ul class="legend"></ul>
+    </div>
     <div class="grid c2">
       <div class="card"><h3>Membres fondateurs</h3><p>Cotisation : <span class="todo">[à définir]</span></p></div>
       <div class="card"><h3>Entreprises gabonaises</h3><p>Cotisation : <span class="todo">[à définir]</span></p></div>
@@ -472,6 +537,39 @@ document.querySelectorAll(".wa-link").forEach(a=>{
   const t = new Image();
   t.onload = ()=> document.querySelectorAll('img[src="assets/logo.svg"]').forEach(i=>i.src="assets/logo.png");
   t.src = "assets/logo.png";
+})();
+
+// Graphiques en anneau (structure du CAGC, pas des statistiques)
+(function(){
+  const COL = ["#0f2447","#c9a24a","#3f6bb0","#8d9bb3","#1b3a6b","#e3c374"];
+  const DATA = {
+    missions:["Partenariats","Événements","Plaidoyer","Échanges et investissements"],
+    membres:["Membres fondateurs","Entreprises gabonaises","Entreprises canadiennes","Institutions et partenaires","Membres individuels","Membres d'honneur"]
+  };
+  document.querySelectorAll("[data-donut]").forEach(box=>{
+    const items = DATA[box.dataset.donut], n = items.length, r = 42, C = 2*Math.PI*r, gap = 2.2;
+    const [num,label] = box.dataset.center.split("|");
+    const d = box.querySelector(".donut"), ul = box.querySelector(".legend");
+    let off = 0, svg = '<svg viewBox="0 0 100 100" role="img" aria-label="'+label+'">';
+    items.forEach((t,i)=>{
+      const len = C/n - gap;
+      svg += `<circle data-i="${i}" cx="50" cy="50" r="${r}" stroke="${COL[i]}" stroke-dasharray="${len} ${C-len}" stroke-dashoffset="${-off}"/>`;
+      off += C/n;
+      ul.insertAdjacentHTML("beforeend", `<li data-i="${i}"><i style="background:${COL[i]}"></i>${t}</li>`);
+    });
+    d.innerHTML = svg + '</svg><div class="dc"><b>'+num+'</b><span>'+label+'</span></div>';
+    const dc = d.querySelector(".dc");
+    const set = i=>{
+      d.querySelectorAll("circle").forEach(c=>{ const on = i!==null && +c.dataset.i===i; c.classList.toggle("on",on); c.classList.toggle("dim",i!==null&&!on); });
+      ul.querySelectorAll("li").forEach(l=>l.classList.toggle("on", i!==null && +l.dataset.i===i));
+      dc.innerHTML = i===null ? '<b>'+num+'</b><span>'+label+'</span>' : '<b>'+(i+1)+'</b><span>'+items[i]+'</span>';
+    };
+    box.querySelectorAll("circle,li").forEach(el=>{
+      el.addEventListener("mouseenter",()=>set(+el.dataset.i));
+      el.addEventListener("click",()=>set(+el.dataset.i));
+    });
+    box.addEventListener("mouseleave",()=>set(null));
+  });
 })();
 
 // Apparition au défilement
