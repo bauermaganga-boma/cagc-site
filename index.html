@@ -106,7 +106,18 @@ footer .brand{color:#fff;margin-bottom:10px}
 .wa-float svg{width:26px;height:26px}
 
 .mot{display:grid;gap:22px;align-items:center}
-.mot-photo{width:100%;max-width:340px;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r);border:4px solid #fff;box-shadow:0 18px 40px rgba(15,36,71,.25),0 0 0 2px var(--gold);margin:0 auto}
+/* cadrage buste : on ne garde que le président */
+.crop{position:relative;display:block;overflow:hidden;aspect-ratio:4/5;background:var(--navy2)}
+.crop img{position:absolute;width:165%;max-width:none;height:auto;left:-52%;top:-6%}
+.mot-photo{width:100%;max-width:340px;border-radius:var(--r);border:4px solid #fff;box-shadow:0 18px 40px rgba(15,36,71,.25),0 0 0 2px var(--gold);margin:0 auto}
+.hero-pres{position:relative;display:block;width:min(300px,78%);margin:32px auto 0;text-decoration:none;color:#fff}
+.hero-pres .crop{border-radius:22px 22px 0 0;box-shadow:0 0 0 2px var(--gold)}
+.hero-pres .cap{display:block;background:rgba(255,255,255,.96);color:var(--navy);padding:12px 16px 14px;border-radius:0 0 18px 18px}
+.hero-pres b{display:block;font-family:Georgia,serif;font-size:1.15rem}
+.hero-pres small{display:block;color:var(--g500);font-size:.8rem}
+.hero-pres em{display:block;font-style:normal;color:#8a6a1f;font-weight:600;font-size:.82rem;margin-top:6px}
+.photo img{position:absolute;width:210%;left:-80%;top:-6%;height:auto;max-width:none}
+.photo{position:relative}
 .mot blockquote{border-left:3px solid var(--gold);padding-left:16px;margin:14px 0}
 .mot blockquote p{margin-bottom:10px;font-size:1.02rem}
 .sign{color:var(--navy)}
@@ -139,6 +150,10 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;bac
 .band span{color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
 
 @media(min-width:760px){
+  .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end}
+  .hero-pres{margin:0;width:100%;max-width:340px;justify-self:end;grid-column:2;grid-row:1/span 2}
+  .hero .wrap>*:not(.hero-pres){grid-column:1}
+  .hero .wrap{align-items:center}
   .band q{font-size:2rem;max-width:30ch}
   body{padding-bottom:0}
   h2{font-size:2.1rem}
@@ -189,17 +204,10 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;bac
       <a class="btn btn-gold" href="#membres">Devenir membre</a>
       <a class="btn btn-line" href="#missions">Découvrir nos missions</a>
     </div>
-    <!-- illustration : arc Libreville – Canada -->
-    <svg class="arc" viewBox="0 0 400 130" aria-hidden="true">
-      <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#c9a24a"/><stop offset="1" stop-color="#fff"/></linearGradient></defs>
-      <g fill="#ffffff" opacity=".07">
-        <circle cx="40" cy="20" r="2"/><circle cx="70" cy="30" r="2"/><circle cx="100" cy="15" r="2"/><circle cx="130" cy="35" r="2"/><circle cx="170" cy="18" r="2"/><circle cx="210" cy="30" r="2"/><circle cx="250" cy="12" r="2"/><circle cx="290" cy="32" r="2"/><circle cx="330" cy="18" r="2"/><circle cx="365" cy="30" r="2"/>
-      </g>
-      <path d="M40 112 Q200 -30 360 112" fill="none" stroke="url(#g)" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round"/>
-      <circle cx="40" cy="112" r="7" fill="#c9a24a"/><circle cx="360" cy="112" r="7" fill="#fff"/>
-      <text x="40" y="106" font-size="11" fill="#cdd7e8" text-anchor="middle" transform="translate(0,-12)">Libreville</text>
-      <text x="360" y="106" font-size="11" fill="#cdd7e8" text-anchor="middle" transform="translate(0,-12)">Canada</text>
-    </svg>
+    <a class="hero-pres" href="#mot" aria-label="Mot du président">
+      <span class="crop"><img src="assets/president.jpg" alt="M. MEYO, Président fondateur du CAGC"></span>
+      <span class="cap"><b>M. MEYO</b><small>Président fondateur</small><em>Lire son mot →</em></span>
+    </a>
   </div>
   <div class="stats">
     <div><b>4</b><span>missions</span></div>
@@ -213,7 +221,7 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;bac
   <div class="wrap">
     <div class="kicker">Mot du président</div>
     <div class="mot">
-      <img class="mot-photo" src="assets/president.jpg" alt="M. MEYO, Président fondateur du CAGC">
+      <div class="crop mot-photo"><img src="assets/president.jpg" alt="M. MEYO, Président fondateur du CAGC"></div>
       <div>
         <h2>Bienvenue au Conseil d'Affaires Gabon-Canada</h2>
         <blockquote>

@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo CAGC">
-  <rect width="64" height="64" rx="14" fill="#0f2447"/>
-  <path d="M10 42 Q32 12 54 42" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
-  <path d="M10 42 Q32 24 54 42" fill="none" stroke="#c9a24a" stroke-width="2.5" stroke-linecap="round"/>
-  <circle cx="10" cy="42" r="4" fill="#fff"/>
-  <circle cx="54" cy="42" r="4" fill="#fff"/>
-  <path d="M8 52h48" stroke="#8d9bb3" stroke-width="2" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b3a6b"/><stop offset="1" stop-color="#0a1a38"/></linearGradient>
+    <linearGradient id="au" x1="0" x2="1"><stop offset="0" stop-color="#e3c374"/><stop offset="1" stop-color="#b8903a"/></linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 14v31M44 14v31" stroke="#fff" stroke-width="3"/>
+    <path d="M5 41Q13 22 20 14Q32 40 44 14Q51 22 59 41" stroke="url(#au)" stroke-width="2.6"/>
+    <path d="M26 24v21M32 29v16M38 24v21M13 31v14M51 31v14" stroke="#9fb0cc" stroke-width="1.3"/>
+    <path d="M4 45h56" stroke="#fff" stroke-width="3.2"/>
+  </g>
+  <text x="32" y="58" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="8.5" letter-spacing="2" fill="#e3c374">CAGC</text>
 </svg>
