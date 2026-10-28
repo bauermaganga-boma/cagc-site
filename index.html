@@ -105,6 +105,13 @@ footer .brand{color:#fff;margin-bottom:10px}
 .wa-float{position:fixed;z-index:60;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:999px;background:var(--wa);color:#073b1c;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .wa-float svg{width:26px;height:26px}
 
+.mot{display:grid;gap:22px;align-items:center}
+.mot-photo{width:100%;max-width:340px;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r);border:4px solid #fff;box-shadow:0 18px 40px rgba(15,36,71,.25),0 0 0 2px var(--gold);margin:0 auto}
+.mot blockquote{border-left:3px solid var(--gold);padding-left:16px;margin:14px 0}
+.mot blockquote p{margin-bottom:10px;font-size:1.02rem}
+.sign{color:var(--navy)}
+.sign b{font-family:Georgia,serif;font-size:1.15rem}
+@media(min-width:760px){.mot{grid-template-columns:340px 1fr;gap:44px}}
 /* ===== Design renforcé ===== */
 h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.01em}
 h2{position:relative;padding-bottom:14px}
@@ -201,6 +208,42 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;bac
     <div><b>5</b><span>valeurs fondatrices</span></div>
   </div>
 </div>
+
+<section id="mot">
+  <div class="wrap">
+    <div class="kicker">Mot du président</div>
+    <div class="mot">
+      <img class="mot-photo" src="assets/president.jpg" alt="M. MEYO, Président fondateur du CAGC">
+      <div>
+        <h2>Bienvenue au Conseil d'Affaires Gabon-Canada</h2>
+        <blockquote>
+          <p>Le Gabon et le Canada ont beaucoup à construire ensemble. Le CAGC est né d'une conviction : les relations économiques, sociales et institutionnelles entre nos deux pays gagneront à être portées par un cadre de confiance, neutre et structuré.</p>
+          <p>Notre rôle est de rapprocher les entreprises, d'accompagner les investisseurs, de faire entendre la voix des acteurs économiques auprès des autorités et de faciliter chaque échange.</p>
+          <p>Je vous invite à rejoindre cette dynamique.</p>
+        </blockquote>
+        <p class="sign"><b>M. MEYO</b><br>Président fondateur</p>
+      </div>
+    </div>
+    <p class="note"><span class="todo">Texte proposé, à valider par le président.</span></p>
+  </div>
+</section>
+
+<section class="alt" id="apport">
+  <div class="wrap">
+    <div class="kicker">Ce que le Conseil apporte</div>
+    <h2>Un partenaire pour les deux côtés</h2>
+    <p class="lead">Au-delà des rencontres, le CAGC met son réseau et son expertise au service de la relation Gabon-Canada.</p>
+    <div class="grid c3">
+      <div class="card"><h3>Information et veille</h3><p>Notes sectorielles et repères sur les marchés gabonais et canadien.</p></div>
+      <div class="card"><h3>Mise en relation ciblée</h3><p>Partenaires, fournisseurs, investisseurs et institutions des deux pays.</p></div>
+      <div class="card"><h3>Appui à l'implantation</h3><p>Accompagnement des entreprises qui s'installent au Gabon ou au Canada.</p></div>
+      <div class="card"><h3>Représentation et plaidoyer</h3><p>Une voix collective auprès des autorités pour améliorer le climat des affaires.</p></div>
+      <div class="card"><h3>Coopération institutionnelle</h3><p>Relais avec ambassades, chambres de commerce et agences de promotion des investissements.</p></div>
+      <div class="card"><h3>Développement économique et social</h3><p>Des partenariats qui créent des emplois, des compétences et de la valeur partagée.</p></div>
+    </div>
+    <p class="note"><span class="todo">Pistes proposées, à ajuster selon l'offre de service définitive.</span></p>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
